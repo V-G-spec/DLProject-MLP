@@ -2,7 +2,7 @@
 
 ## Installation
 ### Data
-You can download the `train_32.beton` file from this [Google Drive Link](https://drive.google.com/drive/folders/1aIWc87WfqGGtjGPHJe62tXzO6e5VoWcy?usp=sharing) and save it at `Data/`
+You can download the `train_32.beton` file from this [Google Drive Link](https://drive.google.com/drive/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz?usp=drive_link) and save it at `Data/`
 ### Environment
 Set up a conda environment using the `environment.yml` file as follows:
 ```
