@@ -1,4 +1,6 @@
 Data/train_32.beton
+
+# Charles
 .DS_Store
 Experiments/Charles/vgg_models/state_dicts
 Experiments/Charles/vgg_models/__pycache__
