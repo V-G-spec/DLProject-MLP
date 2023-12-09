@@ -1,4 +1,10 @@
-name: _interpret_MLP
+name: interpret_MLP
 channels:
   - defaults
 dependencies:
+  - python=3.9.18
+  - matplotlib=3.8.2
+  - numpy=1.26.2
+  - torch=2.1.1
+  - torchvision=0.16.1
+  - progressbar=2.5
