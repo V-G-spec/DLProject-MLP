@@ -3,11 +3,28 @@
 ## Installation
 ### Data
 You can download the `train_32.beton` file from this [Google Drive Link](https://drive.google.com/drive/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz?usp=drive_link) and save it at `Data/`
-### Environment
+### [CHECK] Environment
 Set up a conda environment using the `environment.yml` file as follows:
 ```
 conda env create -f environment.yml
 conda activate interpret_MLP
+```
+
+### [WIP] Environment pip
+#### Create and activate a virtual environment as follows:
+##### For Windows:
+```
+virtualenv interpret_MLP
+interpret_MLP\Scripts\activate
+```
+##### For MacOS and Linux:
+```
+virtualenv interpret_MLP
+source interpret_MLP/bin/activate
+```
+#### Install the required packages:
+```
+pip install -r requirements.txt
 ```
 
 ## Proposal
