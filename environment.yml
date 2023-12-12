@@ -1,6 +1,8 @@
 name: interpret_MLP
 channels:
   - defaults
+  - pytorch
+  - conda-forge
 dependencies:
   - python=3.9.18
   - matplotlib=3.8.2
