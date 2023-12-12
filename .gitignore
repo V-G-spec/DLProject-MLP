@@ -6,5 +6,6 @@ scaling_mlps/
 
 # Charles
 .DS_Store
-Experiments/Charles/vgg_models/state_dicts
-Experiments/Charles/vgg_models/__pycache__
+Experiments/Charles/VGG/vgg_models/state_dicts
+Experiments/Charles/MLP/checkpoints/
+**/__pycache__/
