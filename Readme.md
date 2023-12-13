@@ -14,12 +14,12 @@ conda activate interpret_MLP
 #### Create and activate a virtual environment as follows:
 ##### For Windows:
 ```
-virtualenv interpret_MLP
+python -m venv ./interpret_MLP
 interpret_MLP\Scripts\activate
 ```
 ##### For MacOS and Linux:
 ```
-virtualenv interpret_MLP
+python -m venv ./interpret_MLP
 source interpret_MLP/bin/activate
 ```
 #### Install the required packages:
