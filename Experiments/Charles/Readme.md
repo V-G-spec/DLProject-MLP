@@ -5,6 +5,8 @@ These weights and the code for the model were obtained from this [Github reposit
 
 For ViT have to run pip install git+https://github.com/huggingface/transformers.git
 
+Run: conda create -n "env_test" python=3.9.18
+
 package versions:
 
 Python             3.9.18
