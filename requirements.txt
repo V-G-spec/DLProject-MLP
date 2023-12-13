@@ -4,4 +4,4 @@ numpy==1.26.2
 torch==2.1.1
 torchvision==0.16.1
 progressbar==2.5
-transformers 4.35.2
+transformers==4.35.2
