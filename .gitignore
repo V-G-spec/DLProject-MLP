@@ -9,3 +9,5 @@ scaling_mlps/
 Experiments/Charles/VGG/vgg_models/state_dicts
 Experiments/Charles/MLP/checkpoints/
 **/__pycache__/
+Experiments/Charles/MLP/data
+Experiments/Charles/VGG/data
