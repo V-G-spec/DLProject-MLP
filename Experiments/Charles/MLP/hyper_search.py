@@ -5,6 +5,10 @@ from torchvision import transforms
 from data_utils.data_stats import *
 import numpy as np
 
+# Set the working directory
+import os
+os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/MLP/")
+
 # Set seed values for PyTorch and NumPy for reproducibility
 seed_value = 42
 torch.manual_seed(seed_value)
@@ -52,7 +56,7 @@ def main():
         for kernel_size in kernel_sizes:
             for start_sig in start_sigs:
                 end_sig = start_sig/10
-                for class_idx in class_idxs:
+                for idx in class_idxs:
 
                     # ----------Creating a random starting input-----------
                     mean = 0.5
@@ -77,7 +81,7 @@ def main():
                         
                         with torch.no_grad():
 
-                            step_size = start_ss + ((end_ss - ss) * epoch) / epochs
+                            step_size = start_ss + ((end_ss - start_ss) * epoch) / epochs
                             input += step_size/np.abs(g).mean() * g
 
                             sig = start_sig + ((end_sig - start_sig) * epoch) / epochs
@@ -89,7 +93,7 @@ def main():
                         if (epoch+1) % (epochs/num_im_save) == 0:
                             output = input.detach()
                             output_directory = './Act_Max_Img_MLP/'
-                            output_filename = f'class_{idx}_ker_{kernel_size}_startss_{start_ss}_startsig_{start_sig}_epoch_{epoch}.pt'
+                            output_filename = f'class_{idx}_ker_{kernel_size}_startss_{start_ss}_startsig_{start_sig}_epoch_{epoch+1}.pt'
                             output_path = output_directory + output_filename
                             torch.save(output, output_path)
                             

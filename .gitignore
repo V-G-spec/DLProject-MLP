@@ -7,7 +7,8 @@ scaling_mlps/
 # Charles
 .DS_Store
 Experiments/Charles/VGG/vgg_models/state_dicts
-Experiments/Charles/MLP/checkpoints/
+Experiments/Charles/MLP/checkpoints/*
 **/__pycache__/
 Experiments/Charles/MLP/data
 Experiments/Charles/VGG/data
+Experiment/Charles/MLP/Act_Max_Img_MLP/*
