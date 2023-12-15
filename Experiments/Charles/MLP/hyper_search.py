@@ -23,25 +23,14 @@ def main():
     checkpoint = 'in21k_cifar10'        # This means you want the network pre-trained on ImageNet21k and finetuned on CIFAR10
 
     # ----------Define the model and specify the pre-trained weights--------------
-    model = get_model(architecture=architecture, resolution=crop_resolution, num_classes=CLASS_DICT[dataset],
-                  checkpoint='in21k_cifar10')
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-    # Define the model and specify the pre-trained weights
     model = get_model(architecture=architecture, resolution=crop_resolution, num_classes=CLASS_DICT[dataset],
                     checkpoint='in21k_cifar10')
     model = nn.Sequential(nn.Flatten(1, -1),model)
     model.to(device)
 
-
-    # ----------Creating a random starting input-----------
-    mean = 0.5
-    std = 0.5/3
-    input = mean + std*torch.randn((3,64,64)) # should be of size 3,64,64
-    input.unsqueeze_(0) # create a mini-batch as expected by the model
-    input = input.to(device)
-    input.requires_grad_()
 
     # ---------The different hyperparameters to tune-----------
     start_sss = np.logspace(-5,-1,5) # start step sizes
@@ -64,6 +53,15 @@ def main():
             for start_sig in start_sigs:
                 end_sig = start_sig/10
                 for class_idx in class_idxs:
+
+                    # ----------Creating a random starting input-----------
+                    mean = 0.5
+                    std = 0.5/3
+                    input = mean + std*torch.randn((3,64,64)) # should be of size 3,64,64
+                    input.unsqueeze_(0) # create a mini-batch as expected by the model
+                    input = input.to(device)
+                    input.requires_grad_()
+
                     for epoch in range(epochs):
 
                         model.zero_grad()
