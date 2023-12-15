@@ -5,6 +5,10 @@ from torchvision import transforms
 from data_utils.data_stats import *
 import numpy as np
 
+# Set seed values for PyTorch and NumPy for reproducibility
+seed_value = 42
+torch.manual_seed(seed_value)
+np.random.seed(seed_value)
 
 def main():
 
@@ -33,70 +37,64 @@ def main():
 
     # ----------Creating a random starting input-----------
     mean = 0.5
-    std = 0.03
+    std = 0.5/3
     input = mean + std*torch.randn((3,64,64)) # should be of size 3,64,64
     input.unsqueeze_(0) # create a mini-batch as expected by the model
     input = input.to(device)
     input.requires_grad_()
 
     # ---------The different hyperparameters to tune-----------
-    num_epochs = []
-    start_sss = [] # start step sizes
-    end_sss = [] # end step sizes
-    start_sigs = []
-    end_sigs = []
-    theta_decays = []
-    class_idxs = []
-
+    start_sss = np.logspace(-5,-1,5) # start step sizes
+    kernel_sizes = [3,5,7]
+    start_sigs = np.linspace(0.1,1,5)
+    class_idxs = [i for i in range(10)]
+    
+    start_sss = [0.1] # start step sizes
+    kernel_sizes = [7]
+    start_sigs = [0.1]
+    class_idxs = [9]
+    epochs = 1000
     num_im_save = 10
 
 
-    # -------- [TO DO] write the rest of the hyperparameter tuning loop---------
-    # Class I want to optimize
-    idx = 5 # 0: airplanes, 1: cars, 2: birds, 3: cats, 4: deer, 5: dogs, 6: frogs, 7: horses, 8: ships, 9: trucks
+    # -------- Hyperparameter tuning loop---------
+    for start_ss in start_sss:
+        end_ss = start_ss/10
+        for kernel_size in kernel_sizes:
+            for start_sig in start_sigs:
+                end_sig = start_sig/10
+                for class_idx in class_idxs:
+                    for epoch in range(epochs):
 
+                        model.zero_grad()
 
-    epochs = 1000
-    start_ss = 0.001
-    end_ss = 0.001
+                        if input.grad != None:
+                            input.grad.zero_()
 
+                        y_pred = model.forward(input)
+                        
+                        y_pred[0,idx].backward()
 
-    start_sig = 1 # Having a decaying sigma seems to yield better results
-    end_sig = 0.5 
-    theta_decay = 0.0001 # Theta decay seems to help (0.02 seems good)
+                        g = input.grad
+                        
+                        with torch.no_grad():
 
-    for epoch in range(epochs):
+                            step_size = start_ss + ((end_ss - ss) * epoch) / epochs
+                            input += step_size/np.abs(g).mean() * g
 
-        model.zero_grad()
+                            sig = start_sig + ((end_sig - start_sig) * epoch) / epochs
+                            blurrer = transforms.GaussianBlur(kernel_size=kernel_size, sigma=sig)
+                            input = blurrer(input)    
 
-        if input.grad != None:
-            input.grad.zero_()
+                        input.requires_grad_()
 
-        y_pred = model.forward(input)
-        
-        y_pred[0,idx].backward()
-
-        g = input.grad
-        
-        with torch.no_grad():
-
-            step_size = start_ss + ((end_ss - ss) * epoch) / epochs
-            input += step_size/np.abs(g).mean() * g
-
-            input = input.mul((1.0 - theta_decay)) # weight decay
-
-            sig = start_sig + ((end_sig - start_sig) * epoch) / epochs
-            blurrer = transforms.GaussianBlur(kernel_size=5, sigma=sig)
-            input = blurrer(input)    
-
-        input.requires_grad_()
-
-        if (epoch+1) % (epochs/num_im_save) == 0:
-            output = input.detach().numpy()
-            output_directory = './Act_Max_Img/MLP/'
-            output_filename = f'class_{idx}_slr_{start_ss}_elr_{end_ss}_ssig_{start_sig}_esig_{end_sig}_thetad_{theta_decay}_epoch_{epoch}.jpg'
-            output_path = output_directory + output_filename
-            np.savetxt(output_path, output, delimiter=",")
+                        if (epoch+1) % (epochs/num_im_save) == 0:
+                            output = input.detach()
+                            output_directory = './Act_Max_Img_MLP/'
+                            output_filename = f'class_{idx}_ker_{kernel_size}_startss_{start_ss}_startsig_{start_sig}_epoch_{epoch}.pt'
+                            output_path = output_directory + output_filename
+                            torch.save(output, output_path)
+                            
 
 
 
