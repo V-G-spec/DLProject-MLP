@@ -11,5 +11,5 @@ Experiments/Charles/MLP/checkpoints/**
 **/__pycache__/
 Experiments/Charles/MLP/data
 Experiments/Charles/VGG/data
-Experiment/Charles/MLP/Act_Max_Img_MLP/
-Experiment/Charles/MLP/Act_Max_MLP_Raw_Images/
+Experiment/Charles/MLP/Act_Max_Img_MLP/*
+Experiment/Charles/MLP/Act_Max_MLP_Raw_Images/*
