@@ -3,6 +3,8 @@ Data/train_32.beton
 
 # Vansh
 scaling_mlps/
+Experiments/Vansh/Sample_Images
+Experiments/Vansh/VGG/vgg_models
 
 # Charles
 .DS_Store
