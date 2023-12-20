@@ -5,6 +5,7 @@ Data/train_32.beton
 scaling_mlps/
 Experiments/Vansh/Sample_Images
 Experiments/Vansh/VGG/vgg_models
+Experiments/Vansh/MLP/checkpoints/
 
 # Charles
 .DS_Store
