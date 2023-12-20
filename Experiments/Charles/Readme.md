@@ -18,3 +18,5 @@ progressbar        2.5
 transformers       4.35.2
 
 May have to change the load() function in ./site-package/torch/serialization.py to have MAP_LOCATION match yur device. I had to change it to 'cpu'. Shouldn't be a problem if using gpu.
+
+Dowload the VGG weights from the drive and store them in VGG/vgg_models/state_dicts/
