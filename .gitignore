@@ -6,6 +6,7 @@ scaling_mlps/
 Experiments/Vansh/Sample_Images
 Experiments/Vansh/VGG/vgg_models
 Experiments/Vansh/MLP/checkpoints/
+Experiments/Vansh/MLP/data
 
 # Charles
 .DS_Store
