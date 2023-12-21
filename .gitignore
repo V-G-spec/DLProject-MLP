@@ -18,3 +18,4 @@ Experiments/Charles/VGG/data
 Experiments/Charles/MLP/Act_Max_Img_MLP/*
 Experiments/Charles/MLP/Act_Max_Img_MLP_Raw_Images/*
 Experiments/Charles/VGG/cifar10_permuted.pth
+Experiments/Charles/MLP/cifar10_permuted.pth
