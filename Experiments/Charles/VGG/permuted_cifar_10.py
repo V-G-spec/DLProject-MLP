@@ -12,6 +12,8 @@ os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project
 torch.manual_seed(42)
 np.random.seed(42)
 
+block_size = 16
+
 # Function to divide an image into 9 patches and randomly permute them
 def divide_and_permute(image):
 
@@ -21,7 +23,7 @@ def divide_and_permute(image):
 
     # Divide the image into 16 non-overlapping 4x4 patches
     patches = []
-    block_size = 8
+    
     
     for row in range(0, image.shape[1], block_size):
         for col in range(0, image.shape[2], block_size):
@@ -35,10 +37,11 @@ def divide_and_permute(image):
     # Create a new image using the permuted patches
     permuted_image = torch.zeros_like(image)
 
-    
+    num_of_blocks = int(image.shape[1]/block_size)
+
     for j, patch in enumerate(patches):
-        row = (j // 4) * block_size
-        col = (j % 4) * block_size
+        row = (j // num_of_blocks) * block_size
+        col = (j % num_of_blocks) * block_size
         permuted_image[:,row:row + block_size, col:col + block_size] = patch
 
     return permuted_image
@@ -68,4 +71,4 @@ with torch.no_grad():
     dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
     # Save the dataset dictionary to a file
-    torch.save(dataset_dict, 'cifar10_permuted_1.pth')
+    torch.save(dataset_dict, f'cifar10_permuted_block_size_{block_size}.pth')
