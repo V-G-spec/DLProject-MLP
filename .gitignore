@@ -15,7 +15,7 @@ Experiments/Charles/MLP/checkpoints/**
 **/__pycache__/
 Experiments/Charles/MLP/data
 Experiments/Charles/VGG/data
-Experimentss/Charles/MLP/Act_Max_Img_MLP/*
+Experiments/Charles/MLP/Act_Max_Img_MLP/*
 Experiments/Charles/MLP/Act_Max_Img_MLP_Raw_Images/*
 Experiments/Charles/VGG/cifar10_permuted_block_size_8.pth
 Experiments/Charles/MLP/cifar10_permuted_block_size_8.pth
