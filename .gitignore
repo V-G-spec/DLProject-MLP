@@ -3,13 +3,23 @@ Data/train_32.beton
 
 # Vansh
 scaling_mlps/
+Experiments/Vansh/Sample_Images
+Experiments/Vansh/VGG/vgg_models
+Experiments/Vansh/MLP/checkpoints/
+Experiments/Vansh/MLP/data
 
 # Charles
 .DS_Store
 Experiments/Charles/VGG/vgg_models/state_dicts
-Experiments/Charles/MLP/checkpoints/*
+Experiments/Charles/MLP/checkpoints/**
 **/__pycache__/
 Experiments/Charles/MLP/data
 Experiments/Charles/VGG/data
-Experiments/Charles/MLP/Act_Max_Img_MLP/**
+Experimentss/Charles/MLP/Act_Max_Img_MLP/*
+Experiments/Charles/MLP/Act_Max_Img_MLP_Raw_Images/*
+Experiments/Charles/VGG/cifar10_permuted_block_size_8.pth
+Experiments/Charles/MLP/cifar10_permuted_block_size_8.pth
+Experiments/Charles/VGG/cifar10_permuted_block_size_16.pth
+Experiments/Charles/MLP/cifar10_permuted_block_size_16.pth
+Experiments/Charles/MLP/adversarial_example_index_1.pt
 Experiments/Charles/MLP/job.sh

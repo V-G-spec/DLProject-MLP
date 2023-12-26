@@ -19,4 +19,9 @@ transformers       4.35.2
 
 May have to change the load() function in ./site-package/torch/serialization.py to have MAP_LOCATION match yur device. I had to change it to 'cpu'. Shouldn't be a problem if using gpu.
 
+Dowload the VGG weights from the drive and store them in VGG/vgg_models/state_dicts/
+
+When using MLP, need to set wrokign directory like so: import os
+os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/MLP/")
+
 Don't forget to change the working directory in the hyper_search.py file
