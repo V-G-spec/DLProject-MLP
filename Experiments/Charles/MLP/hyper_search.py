@@ -7,7 +7,7 @@ import numpy as np
 
 # Set the working directory
 import os
-os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/MLP/")
+os.chdir("/home/chlego/DLProject-MLP/Experiments/Charles/MLP")
 
 # Set seed values for PyTorch and NumPy for reproducibility
 seed_value = 42
@@ -42,10 +42,6 @@ def main():
     start_sigs = np.linspace(0.1,1,5)
     class_idxs = [i for i in range(10)]
     
-    start_sss = [0.1] # start step sizes
-    kernel_sizes = [7]
-    start_sigs = [0.1]
-    class_idxs = [9]
     epochs = 1000
     num_im_save = 10
 
@@ -82,7 +78,7 @@ def main():
                         with torch.no_grad():
 
                             step_size = start_ss + ((end_ss - start_ss) * epoch) / epochs
-                            input += step_size/np.abs(g).mean() * g
+                            input += step_size/np.abs(g.cpu()).mean() * g
 
                             sig = start_sig + ((end_sig - start_sig) * epoch) / epochs
                             blurrer = transforms.GaussianBlur(kernel_size=kernel_size, sigma=sig)
