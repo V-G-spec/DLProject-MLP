@@ -7,6 +7,8 @@ Experiments/Vansh/Sample_Images
 Experiments/Vansh/VGG/vgg_models
 Experiments/Vansh/MLP/checkpoints/
 Experiments/Vansh/MLP/data
+Experiments/Vansh/MLP/saliency-outputs
+Experiments/Vansh/VGG/saliency-outputs
 
 # Charles
 .DS_Store

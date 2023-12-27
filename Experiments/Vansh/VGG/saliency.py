@@ -5,6 +5,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+random.seed(0)
 from vgg_models.vgg import vgg13_bn
 import torchvision.datasets as datasets
 from torch.utils.data import DataLoader
@@ -85,7 +86,7 @@ for inputs, labels in test_loader:
         some_idx += 1
         if (random.random() < 0.01):
             if (label == pred):
-                print(classes[label.item()])
+                # print(classes[label.item()])
                 plt.figure(figsize=(10, 10))
                 plt.subplot(1, 2, 1)
                 plt.imshow(transform_img(inv_normalize(input)))
