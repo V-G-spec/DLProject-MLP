@@ -23,5 +23,9 @@ Experiments/Charles/VGG/cifar10_permuted_block_size_8.pth
 Experiments/Charles/MLP/cifar10_permuted_block_size_8.pth
 Experiments/Charles/VGG/cifar10_permuted_block_size_16.pth
 Experiments/Charles/MLP/cifar10_permuted_block_size_16.pth
-Experiments/Charles/MLP/adversarial_example_index_1.pt
+Experiments/Charles/VGG/cifar10_fgsa_VGG.pth
+Experiments/Charles/MLP/cifar10_fgsa_VGG.pth
+Experiments/Charles/VGG/cifar10_fgsa_MLP.pth
+Experiments/Charles/MLP/cifar10_fgsa_MLP.pth
+
 Experiments/Charles/MLP/job.sh
