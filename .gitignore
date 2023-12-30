@@ -9,6 +9,8 @@ Experiments/Vansh/MLP/checkpoints/
 Experiments/Vansh/MLP/data
 Experiments/Vansh/MLP/saliency-outputs
 Experiments/Vansh/VGG/saliency-outputs
+Experiments/Vansh/VGG/cifar10_pgd_VGG_eps_10.pth
+Experiments/Vansh/VGG/cifar10_pgd_VGG_eps_5.pth
 
 # Charles
 .DS_Store
