@@ -3,6 +3,8 @@ from torchvision import datasets, transforms
 import numpy as np
 from PIL import Image
 from vgg_models.vgg import vgg13_bn
+from vgg_models.densenet import densenet169
+from vgg_models.resnet import resnet50
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
@@ -48,9 +50,9 @@ test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, trans
 
 
 # ------------- Load the pretrained model ------------
-model = vgg13_bn(pretrained=True)
+model = densenet169(pretrained=True) # choose from the different models: vgg13_bn, densenet169, resnet50
 model = model.to(device)
-model.train()
+model.eval()
 
 # Create a file that can used used to load a modified dataset
 
@@ -73,4 +75,4 @@ for i in range(len(test_dataset)):
 dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
 # Save the dataset dictionary to a file
-torch.save(dataset_dict, f'cifar10_fgsa_VGG.pth')
+torch.save(dataset_dict, f'cifar10_fgsa_densenet169_eval_10.pth')

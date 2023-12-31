@@ -21,13 +21,8 @@ Experiments/Charles/MLP/data
 Experiments/Charles/VGG/data
 Experiments/Charles/MLP/Act_Max_Img_MLP/*
 Experiments/Charles/MLP/Act_Max_Img_MLP_Raw_Images/*
-Experiments/Charles/VGG/cifar10_permuted_block_size_8.pth
-Experiments/Charles/MLP/cifar10_permuted_block_size_8.pth
-Experiments/Charles/VGG/cifar10_permuted_block_size_16.pth
-Experiments/Charles/MLP/cifar10_permuted_block_size_16.pth
-Experiments/Charles/VGG/cifar10_fgsa_VGG.pth
-Experiments/Charles/MLP/cifar10_fgsa_VGG.pth
-Experiments/Charles/VGG/cifar10_fgsa_MLP.pth
-Experiments/Charles/MLP/cifar10_fgsa_MLP.pth
+Experiments/Charles/VGG/cifar10_datasets/*
+Experiments/Charles/MLP/cifar10_datasets/*
+
 
 Experiments/Charles/MLP/job.sh
