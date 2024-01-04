@@ -23,6 +23,4 @@ Experiments/Charles/MLP/Act_Max_Img_MLP/*
 Experiments/Charles/MLP/Act_Max_Img_MLP_Raw_Images/*
 Experiments/Charles/VGG/cifar10_datasets/*
 Experiments/Charles/MLP/cifar10_datasets/*
-
-
 Experiments/Charles/MLP/job.sh
