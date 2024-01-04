@@ -88,4 +88,4 @@ for i in range(len(test_dataset)):
 dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
 # Save the dataset dictionary to a file
-torch.save(dataset_dict, f'cifar10_fgsa_MLP_eval_10.pth')
+torch.save(dataset_dict, f'cifar10_fgsa_MLP.pth')

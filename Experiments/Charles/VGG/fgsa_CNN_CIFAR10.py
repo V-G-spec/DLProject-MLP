@@ -2,13 +2,13 @@ import torch
 from torchvision import datasets, transforms
 import numpy as np
 from PIL import Image
-from vgg_models.vgg import vgg13_bn
-from vgg_models.densenet import densenet169
-from vgg_models.resnet import resnet50
+from models.vgg import vgg13_bn
+from models.densenet import densenet169
+from models.resnet import resnet50
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
-# Set the working directory
+# Set the working directory, change to your specific directory
 import os
 os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/VGG/")
 
@@ -18,7 +18,7 @@ torch.manual_seed(42)
 np.random.seed(42)
 
 
-# Function that alters the image
+# ------------ Fast Gradient Sign Attack function ---------------
 def fgsa(image, label):
     eps_pga = 10   # Perturbation size
 
@@ -39,13 +39,13 @@ def fgsa(image, label):
 
     return img_adv_sign.reshape(3,32,32)
 
+
 # Set device to GPU if available, otherwise use CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # ---------- Load the CIFAR-10 test dataset -------------
 
 normalize = transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2471, 0.2435, 0.2616))
-
 test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=None)
 
 
@@ -75,4 +75,4 @@ for i in range(len(test_dataset)):
 dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
 # Save the dataset dictionary to a file
-torch.save(dataset_dict, f'cifar10_fgsa_densenet169_eval_10.pth')
+torch.save(dataset_dict, f'cifar10_fgsa_densenet169.pth') # Change name accordingly

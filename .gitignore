@@ -14,7 +14,7 @@ Experiments/Vansh/VGG/cifar10_pgd_VGG_eps_5.pth
 
 # Charles
 .DS_Store
-Experiments/Charles/VGG/vgg_models/state_dicts
+Experiments/Charles/VGG/models/state_dicts
 Experiments/Charles/MLP/checkpoints/**
 **/__pycache__/
 Experiments/Charles/MLP/data
