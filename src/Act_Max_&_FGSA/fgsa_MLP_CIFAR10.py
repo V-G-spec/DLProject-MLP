@@ -2,15 +2,14 @@ import torch
 from torchvision import datasets, transforms
 import numpy as np
 from PIL import Image
-from CNN_models.vgg import vgg13_bn
-from CNN_models.densenet import densenet169
-from CNN_models.resnet import resnet50
+from models.networks import get_model
+from data_utils.data_stats import *
 import torch.nn.functional as F
-import matplotlib.pyplot as plt
+import torch.nn as nn
 
-# Set the working directory, change to your specific directory
+# Set the working directory
 import os
-os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/VGG/")
+os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/MLP/")
 
 
 # Set random seed for reproducibility
@@ -18,13 +17,13 @@ torch.manual_seed(42)
 np.random.seed(42)
 
 
-# ------------ Fast Gradient Sign Attack function ---------------
+# Function that alters the image
 def fgsa(image, label):
     eps_pga = 10   # Perturbation size
 
     # Create a copy of the image, but with gradient activated
-    img_with_grad = image.clone().detach().type(torch.float32).unsqueeze(0).requires_grad_(True)
-
+    img_with_grad = resize(image.clone().detach().type(torch.float32).unsqueeze(0)).requires_grad_(True)
+    
     # Calculate logits
     logits_sign = model(normalize(img_with_grad))
     
@@ -37,20 +36,34 @@ def fgsa(image, label):
     # Create the adversarial example
     img_adv_sign = img_with_grad + r_sign
 
-    return img_adv_sign.reshape(3,32,32)
-
+    return img_adv_sign.reshape(3,64,64)
 
 # Set device to GPU if available, otherwise use CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # ---------- Load the CIFAR-10 test dataset -------------
 
+resize = transforms.Resize(64)
 normalize = transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2471, 0.2435, 0.2616))
+
 test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=None)
 
 
 # ------------- Load the pretrained model ------------
-model = densenet169(pretrained=True) # choose from the different models: vgg13_bn, densenet169, resnet50
+dataset = 'cifar10'                 # One of cifar10, cifar100, stl10, imagenet or imagenet21
+architecture = 'B_12-Wi_1024'
+data_resolution = 32                # Resolution of data as it is stored
+crop_resolution = 64                # Resolution of fine-tuned model (64 for all models we provide)
+num_classes = CLASS_DICT[dataset]
+data_path = './beton/'
+eval_batch_size = 1024
+checkpoint = 'in21k_cifar10'        # This means you want the network pre-trained on ImageNet21k and finetuned on CIFAR10
+
+model = get_model(architecture=architecture, resolution=crop_resolution, num_classes=CLASS_DICT[dataset],
+                  checkpoint='in21k_cifar10')
+model = nn.Sequential(
+    nn.Flatten(1, -1),model
+)
 model = model.to(device)
 model.eval()
 
@@ -61,8 +74,8 @@ labels = []
 
 for i in range(len(test_dataset)):
     image, label = test_dataset[i]
-    transform = transforms.Compose([transforms.PILToTensor()])
 
+    transform = transforms.Compose([transforms.PILToTensor()])
     image = transform(image) 
     label = torch.tensor(label)
 
@@ -75,4 +88,4 @@ for i in range(len(test_dataset)):
 dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
 # Save the dataset dictionary to a file
-torch.save(dataset_dict, f'cifar10_fgsa_densenet169.pth') # Change name accordingly
+torch.save(dataset_dict, f'cifar10_fgsa_MLP.pth')

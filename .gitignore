@@ -15,9 +15,9 @@ Experiments/Vansh/VGG/cifar10_pgd_VGG_eps_5.pth
 # Charles
 .DS_Store
 
-Experiments/Charles/VGG/models/state_dicts/densenet169.pt
-Experiments/Charles/VGG/models/state_dicts/resnet50.pt
-Experiments/Charles/VGG/models/state_dicts/vgg13_bn.pt
+Experiments/Charles/VGG/CNN_models/state_dicts/densenet169.pt
+Experiments/Charles/VGG/CNN_models/state_dicts/resnet50.pt
+Experiments/Charles/VGG/CNN_models/state_dicts/vgg13_bn.pt
 
 Experiments/Charles/MLP/checkpoints/B-12_Wi-1024_res_64_cifar10_epochs_20_config
 Experiments/Charles/MLP/checkpoints/B-12_Wi-1024_res_64_cifar10_epochs_20_weights
