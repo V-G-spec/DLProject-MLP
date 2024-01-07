@@ -1,7 +1,7 @@
 # Deep Learning Project - Multilayer Perceptron (MLP)
 
 ## Overview
-This repository contains code and resources related to our international conference paper on deep learning. The pre-trained Convolutional Neural Network (CNN) models utilized in this project were obtained from the [PyTorch_CIFAR10 GitHub repository](https://github.com/huyvnphan/PyTorch_CIFAR10). Additionally, the pre-trained Multilayer Perceptron (MLP) model can be found in the [scaling_mlps GitHub repository](https://github.com/gregorbachmann/scaling_mlps).
+This repository contains code and resources related to our course project for [Deep Learning](https://da.inf.ethz.ch/teaching/2023/DeepLearning/), offered in the Fall Semester 2023 at ETH Zurich. The pre-trained Convolutional Neural Network (CNN) models utilized in this project were obtained from the [PyTorch_CIFAR10 GitHub repository](https://github.com/huyvnphan/PyTorch_CIFAR10). Additionally, the pre-trained Multilayer Perceptron (MLP) model can be found in the [scaling_mlps GitHub repository](https://github.com/gregorbachmann/scaling_mlps).
 
 The weights for the CNN models (VGG-13bn, ResNet50, and DenseNet169) are available for download from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz). Please save these weights under `CNN_models/state_dicts/`.
 
