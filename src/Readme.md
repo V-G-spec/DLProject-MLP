@@ -59,4 +59,4 @@ The `Dictionary_learning` folder contains scripts to reproduce our project's "Di
 
 After setting the working directory in the files, run `feature_analysis_mlp.ipynb` and `feature_analysis_vgg.ipynb` to conduct feature analysis
 
-All the data loaded by the scripts can be found here: [Google Drive Link](https://drive.google.com/drive/folders/1LVX-Qd6mpycTucePQl6INerHgdfTzkPc?usp=sharing). Place all files you download in the `Dictionary_Learning` folder.
+All the data loaded by the scripts can be found here: [Google Drive Link](https://drive.google.com/drive/folders/1LVX-Qd6mpycTucePQl6INerHgdfTzkPc?usp=sharing). Place all files you download in the `dictionary_learning` folder.
