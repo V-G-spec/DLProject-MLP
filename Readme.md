@@ -1,9 +1,9 @@
-# Deep Learning Project - Multilayer Perceptron (MLP)
+# Interpreting Multilayer Perceptron (MLP)
 
 ## Overview
 This repository contains code and resources related to our course project for [Deep Learning](https://da.inf.ethz.ch/teaching/2023/DeepLearning/), offered in the Fall Semester 2023 at ETH Zurich. The pre-trained Convolutional Neural Network (CNN) models utilized in this project were obtained from the [PyTorch_CIFAR10 GitHub repository](https://github.com/huyvnphan/PyTorch_CIFAR10). Additionally, the pre-trained Multilayer Perceptron (MLP) model can be found in the [scaling_mlps GitHub repository](https://github.com/gregorbachmann/scaling_mlps).
 
-The weights for the CNN models (VGG-13bn, ResNet50, and DenseNet169) are available for download from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz). Please save these weights under `CNN_models/state_dicts/`.
+The weights for the CNN models (VGG-13bn, ResNet50, and DenseNet169) are available for download from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz). Please save these weights under `src/CNN_models/state_dicts/`.
 
 ## Environment Setup
 To replicate our experiments, follow these steps to create and activate a virtual environment:
@@ -25,8 +25,10 @@ Install the required packages using the following command:
 pip install -r requirements.txt
 ```
 
+Note: We run our experiments on Python version 3.9.18 (as included in `requirements.txt`). However, we recommend users to use the correct python executable to initiate the virtual environment
+
 ## Activation Maximization
-In the `Act_Max` folder, you will find all the files necessary to reproduce the results of "Activation Maximization" corresponding to Section 3.1 of our project.
+In the `src/Act_Max` folder, you will find all the files necessary to reproduce the "Activation Maximization" results corresponding to Section 3.1 of our project.
 
 ### Activation Maximization:
 Adjust the working directory at the top of each file. Explore `Act_Max_VGG_13.ipynb` and `Act_Max_B_12_W_1024.ipynb` notebooks to experiment with hyperparameters and regularization techniques.
@@ -37,16 +39,16 @@ For running `Act_Max_B_12_W_1024.ipynb` on a CPU-only machine, modify the `load(
 Conduct a hyperparameter search using `hyper_search.py`. Set the working directory manually. Visualize results with the `visualization.ipynb` notebook. Images created by `hyper_search.py` are available [here](https://drive.google.com/drive/u/3/folders/1FUrYC6vDdn8mwtCxXlNihVu6dKQtxJk3).
 
 ## Fast Gradient Sign Attack (FGSM):
-In the `FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
+In the `src/FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
 
-Adjust the working directory at the top of each file. Use `fgsa_CNN_CIFAR10.py` and `fgsa_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `Act_Max_&_FGSA/cifar10_datasets/`.
+Adjust the working directory at the top of each file. Use `fgsa_CNN_CIFAR10.py` and `fgsa_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `src/Act_Max_&_FGSA/cifar10_datasets/`.
 
 Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
 
 Evaluate CNNs on adversarial datasets and the original CIFAR10 dataset using `CIFAR10_CNN.ipynb`. For MLP, use `CIFAR10_MLP.ipynb`.
 
 ## Dictionary Learning
-The `Dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (2.4).
+The `src/Dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (2.4).
 
 1. Collect last-layer activations for MLP and VGG using `harvest_activations_mlp.ipynb` and `harvest_activations_vgg.ipynb`. Adjust the working directory at the top of each file.
    - Optionally, download activations from the Google Drive at the end of this ReadMe (`acts_B_12-Wi_1024_cifar10_test_postskip.h5` and `acts_VGG13_bn_cifar10_test.h5`, respectively). Perhaps confusingly, the sparse autoencoders (SAEs) are trained on activations elicited by images from the CIFAR10 ***test*** set.
