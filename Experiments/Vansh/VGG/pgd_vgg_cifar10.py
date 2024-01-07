@@ -11,9 +11,11 @@ import random
 random.seed(0)
 torch.manual_seed(0)
 np.random.seed(0)
+epsil = 8/255
+alph = 2/255
 
 # Function that performs PGD attack
-def pgda(image, label, epsilon=8/255, alpha=2/255, num_steps=10):
+def pgda(image, label, epsilon=epsil, alpha=alph, num_steps=10):
     # Create a copy of the image, but with gradient activated
     image = image.to(device)
     label = label.to(device)
@@ -73,4 +75,4 @@ for i in range(len(test_dataset)):
 dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
 # Save the dataset dictionary to a file
-torch.save(dataset_dict, 'cifar10_pgd_VGG.pth')
+torch.save(dataset_dict, f'cifar10_pgd_VGG_eps_{epsil}_alpha_{alph}.pth')
