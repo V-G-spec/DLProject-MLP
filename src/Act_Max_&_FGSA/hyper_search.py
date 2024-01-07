@@ -1,6 +1,11 @@
 # Set the working directory, change to your specific directory
+project_dir = '/Your_project_folder'
+
+import sys
 import os
-os.chdir('/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/src')
+
+sys.path.insert(0,project_dir)
+os.chdir(project_dir)
 
 import torch
 from models.networks import get_model

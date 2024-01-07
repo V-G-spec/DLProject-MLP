@@ -2,7 +2,7 @@
 The pretrained CNN models were obtained from this [Github repository](https://github.com/huyvnphan/PyTorch_CIFAR10)
 The pretrained MLP model was obtained from this [Github repository](https://github.com/gregorbachmann/scaling_mlps)
 
-You can download the weights for the three CNN models: VGG-13bn, ResNet50 and DenseNet169 from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz) and save them under `Act_Max_&_FGSA/CNN_models/state_dicts/`
+You can download the weights for the three CNN models: VGG-13bn, ResNet50 and DenseNet169 from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz) and save them under `CNN_models/state_dicts/`
 
 In all files you will have to set the working directory at the top of the file.
 
@@ -11,7 +11,8 @@ In all files you will have to set the working directory at the top of the file.
 
 You can play around with the Act_Max_VGG_13.ipynb and Act_Max_B_12_W_1024.ipynb notebooks. By tuning hyperparameters and using different regularization techniques, you can get different results.
 
-If running the Act_Max_B_12_W_1024.ipynb on a machine with cpu only, in your_env/lib/python3.11/site-package/torch/serialization.py you will have to change the load() function to have map_location: MAP_LOCATION = 'cpu'
+If running the Act_Max_B_12_W_1024.ipynb on a machine with cpu only, in your_env/lib/python3.*/site-package/torch/serialization.py you will have to change the load() function to have map_location: MAP_LOCATION = 'cpu'
+Then restart the kernel and import all the necessary packages again.
 This is not necessary if your machine has a gpu.
 
 # Specific to VGG
