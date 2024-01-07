@@ -62,4 +62,4 @@ Now, download the images from the CIFAR10 ***training*** set, together with thei
 
 Once you have set the working directroy at the top of the files, you are all set to run the feature analysis notebooks feature_analysis_mlp.ipynb and feature_analysis_vgg.ipynb.
 
-All the data loaded by the scripts can be found here: https://drive.google.com/drive/folders/1LVX-Qd6mpycTucePQl6INerHgdfTzkPc?usp=sharing. Place all files you download in the folder this ReadMe is located in.
+All the data loaded by the scripts can be found here: [Google Drive Link](https://drive.google.com/drive/folders/1LVX-Qd6mpycTucePQl6INerHgdfTzkPc?usp=sharing). Place all files you download in the folder this ReadMe is located in.
