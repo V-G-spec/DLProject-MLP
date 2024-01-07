@@ -4,6 +4,9 @@ The pretrained MLP model was obtained from this [Github repository](https://gith
 
 You can download the weights for the three CNN models: VGG-13bn, ResNet50 and DenseNet169 from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16114hZHtzcx3UXa2FMGlNGh-jTjWB-cz) and save them under `Act_Max_&_FGSA/CNN_models/state_dicts/`
 
+In all files you will have to set the working directory at the top of the file.
+
+
 ## Activation Maximization:
 
 You can play around with the Act_Max_VGG_13.ipynb and Act_Max_B_12_W_1024.ipynb notebooks. By tuning hyperparameters and using different regularization techniques, you can get different results.
@@ -18,7 +21,7 @@ To visualize the results from this hyperparameter search, you can run the visual
 
 ## Fast Gradient Sign Attack (FGSA):
 
-With the fgsa_CNN_CIFAR10.py file you can create the adversarial datasets for each CNN model. You have to manually set your working directory, the model you want to use and the name of the .pth file you want to save the dataset data in.
+With the fgsa_CNN_CIFAR10.py file you can create the adversarial datasets for each CNN model. You have to manually set the model you want to use and the name of the .pth file you want to save the dataset data in.
 With the fgsa_MLP_CIFAR10.py file you can create the adversarial datasets for the MLP model.
 Once you have generated the datasets, store them under `Act_Max_&_FGSA/cifar10_datasets/`
 
