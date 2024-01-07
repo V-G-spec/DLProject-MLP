@@ -25,8 +25,8 @@ Install the required packages using the following command:
 pip install -r requirements.txt
 ```
 
-## Activation Maximization & Fast Gradient Sign Attack (FGSA)
-In the `Act_Max_&_FGSA` folder, you will find all the files necessary to reproduce the results of "Activation Maximization" and "Adversarial Attacks," corresponding to Sections 3.1 and 3.2 of our project.
+## Activation Maximization
+In the `Act_Max` folder, you will find all the files necessary to reproduce the results of "Activation Maximization" corresponding to Section 3.1 of our project.
 
 ### Activation Maximization:
 Adjust the working directory at the top of each file. Explore `Act_Max_VGG_13.ipynb` and `Act_Max_B_12_W_1024.ipynb` notebooks to experiment with hyperparameters and regularization techniques.
@@ -36,7 +36,9 @@ For running `Act_Max_B_12_W_1024.ipynb` on a CPU-only machine, modify the `load(
 #### VGG
 Conduct a hyperparameter search using `hyper_search.py`. Set the working directory manually. Visualize results with the `visualization.ipynb` notebook. Images created by `hyper_search.py` are available [here](https://drive.google.com/drive/u/3/folders/1FUrYC6vDdn8mwtCxXlNihVu6dKQtxJk3).
 
-### Fast Gradient Sign Attack (FGSA):
+## Fast Gradient Sign Attack (FGSM):
+In the `FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
+
 Use `fgsa_CNN_CIFAR10.py` and `fgsa_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `Act_Max_&_FGSA/cifar10_datasets/`.
 
 Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
@@ -44,7 +46,7 @@ Alternatively, download datasets from this [Google Drive Link](https://drive.goo
 Evaluate CNNs on adversarial datasets and the original CIFAR10 dataset using `CIFAR10_CNN.ipynb`. For MLP, use `CIFAR10_MLP.ipynb`.
 
 ## Dictionary Learning
-The `dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (2.4).
+The `Dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (2.4).
 
 1. Collect last-layer activations for MLP and VGG using `harvest_activations_mlp.ipynb` and `harvest_activations_vgg.ipynb`.
    - Optionally, download activations from the Google Drive at the end of this ReadMe (`acts_B_12-Wi_1024_cifar10_test_postskip.h5` and `acts_VGG13_bn_cifar10_test.h5`, respectively). Perhaps confusingly, the sparse autoencoders (SAEs) are trained on activations elicited by images from the CIFAR10 ***test*** set.
@@ -57,4 +59,4 @@ The `dictionary_learning` folder contains scripts to reproduce our project's "Di
 
 After setting the working directory in the files, run `feature_analysis_mlp.ipynb` and `feature_analysis_vgg.ipynb` to conduct feature analysis
 
-All the data loaded by the scripts can be found here: [Google Drive Link](https://drive.google.com/drive/folders/1LVX-Qd6mpycTucePQl6INerHgdfTzkPc?usp=sharing). Place all files you download in the folder this ReadMe is located in.
+All the data loaded by the scripts can be found here: [Google Drive Link](https://drive.google.com/drive/folders/1LVX-Qd6mpycTucePQl6INerHgdfTzkPc?usp=sharing). Place all files you download in the `Dictionary_Learning` folder.
