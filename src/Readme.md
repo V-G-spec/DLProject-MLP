@@ -39,7 +39,7 @@ Conduct a hyperparameter search using `hyper_search.py`. Set the working directo
 ## Fast Gradient Sign Attack (FGSM):
 In the `FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
 
-Use `fgsa_CNN_CIFAR10.py` and `fgsa_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `Act_Max_&_FGSA/cifar10_datasets/`.
+Adjust the working directory at the top of each file. Use `fgsa_CNN_CIFAR10.py` and `fgsa_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `Act_Max_&_FGSA/cifar10_datasets/`.
 
 Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
 
@@ -48,7 +48,7 @@ Evaluate CNNs on adversarial datasets and the original CIFAR10 dataset using `CI
 ## Dictionary Learning
 The `Dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (2.4).
 
-1. Collect last-layer activations for MLP and VGG using `harvest_activations_mlp.ipynb` and `harvest_activations_vgg.ipynb`.
+1. Collect last-layer activations for MLP and VGG using `harvest_activations_mlp.ipynb` and `harvest_activations_vgg.ipynb`. Adjust the working directory at the top of each file.
    - Optionally, download activations from the Google Drive at the end of this ReadMe (`acts_B_12-Wi_1024_cifar10_test_postskip.h5` and `acts_VGG13_bn_cifar10_test.h5`, respectively). Perhaps confusingly, the sparse autoencoders (SAEs) are trained on activations elicited by images from the CIFAR10 ***test*** set.
 
 2. Run `train_autoencoder_for_mlp.py` and `train_autoencoder_for_mlp` to train the sparse autoencoders on the collected activations.
