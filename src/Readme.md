@@ -22,7 +22,8 @@ source interpret_MLP/bin/activate
 pip install -r requirements.txt
 ```
 
-## In the Act_Max_&_FGSA folder, you have all the files necessary to reproduce our results for parts 3.1 and 3.2 of our report
+### Act_Max_&_FGSA folder
+In the Act_Max_&_FGSA folder, you have all the files necessary to reproduce the results of "Activation maximization" and "Adversarial attacks", Sections 3.1 and 3.2 of our project.
 
 ## Activation Maximization:
 In all files you will have to set the working directory at the top of the file.
