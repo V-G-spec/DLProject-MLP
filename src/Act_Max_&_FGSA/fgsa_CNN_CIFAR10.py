@@ -1,3 +1,7 @@
+# Set the working directory, change to your specific directory
+import os
+os.chdir('/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/src')
+
 import torch
 from torchvision import datasets, transforms
 import numpy as np
@@ -7,11 +11,6 @@ from CNN_models.densenet import densenet169
 from CNN_models.resnet import resnet50
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
-
-# Set the working directory, change to your specific directory
-import os
-os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/VGG/")
-
 
 # Set random seed for reproducibility
 torch.manual_seed(42)

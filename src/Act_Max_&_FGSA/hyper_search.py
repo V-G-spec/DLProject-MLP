@@ -1,13 +1,13 @@
+# Set the working directory, change to your specific directory
+import os
+os.chdir('/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/src')
+
 import torch
 from models.networks import get_model
 from torch import nn
 from torchvision import transforms
 from data_utils.data_stats import *
 import numpy as np
-
-# Set the working directory
-import os
-os.chdir("/home/chlego/DLProject-MLP/Experiments/Charles/MLP")
 
 # Set seed values for PyTorch and NumPy for reproducibility
 seed_value = 42
