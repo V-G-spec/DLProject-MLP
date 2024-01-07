@@ -79,4 +79,4 @@ for i in range(len(test_dataset)):
 dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
 
 # Save the dataset dictionary to a file
-torch.save(dataset_dict, f'cifar10_fgsa_densenet169.pth') # Change name accordingly
+torch.save(dataset_dict, f'cifar10_FGSM_densenet169.pth') # Change name accordingly
