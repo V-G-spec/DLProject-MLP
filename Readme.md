@@ -42,7 +42,7 @@ Produce the CIFAR-10 dataset with images transformed into randomly ordered tiles
 
 Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `src/cifar10_datasets/`.
 
-You can evaluate the accuracy of the MLP and VGG models on these datasets by using the 'src/FGSM/CIFAR10_MLP.ipynb' and 'src/FGSM/CIFAR10_CNN.ipynb' files.
+You can evaluate the accuracy of the MLP and VGG models on these datasets by using the `src/FGSM/CIFAR10_MLP.ipynb` and `src/FGSM/CIFAR10_CNN.ipynb` files.
 
 ## Fast Gradient Sign Attack (FGSM):
 In the `src/FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
