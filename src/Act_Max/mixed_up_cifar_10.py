@@ -1,6 +1,11 @@
-# Set the working directory
+# Set the working directory, change to your specific directory
+project_dir = '/Your_project_folder'
+
+import sys
 import os
-os.chdir("/Your_project_folder")
+
+sys.path.insert(0,project_dir)
+os.chdir(project_dir)
 
 import torch
 from torchvision import datasets, transforms
