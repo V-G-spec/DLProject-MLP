@@ -1,18 +1,20 @@
+# Set the working directory
+import os
+os.chdir("/Your_project_folder")
+
 import torch
 from torchvision import datasets, transforms
 import numpy as np
 from PIL import Image
-
-# Set the working directory
-import os
-os.chdir("/Users/charleslego/my_documents/ETH/Classes/Sem3/Deep_learning/Project/Code_Project/DLProject-MLP/Experiments/Charles/VGG/")
 
 
 # Set random seed for reproducibility
 torch.manual_seed(42)
 np.random.seed(42)
 
-block_size = 16
+num_blocks = 2 # Choose between 2 and 4 
+image_res = 32
+block_size = im_res/num_blocks 
 
 # Function to divide an image into 9 patches and randomly permute them
 def divide_and_permute(image):
