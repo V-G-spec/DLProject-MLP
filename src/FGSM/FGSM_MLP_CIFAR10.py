@@ -82,10 +82,11 @@ for i in range(len(test_dataset)):
     transform = transforms.Compose([transforms.PILToTensor()])
     image = transform(image) 
     label = torch.tensor(label)
+    image, label = image.to(device), label.to(device)
 
     # Get FGSA adversarial example
     modified_image = fgsa(image, label)
-    modified_images.append(Image.fromarray(modified_image.detach().permute(1,2,0).numpy().astype(np.uint8)))
+    modified_images.append(Image.fromarray(modified_image.detach().permute(1,2,0).cpu().numpy().astype(np.uint8)))
     labels.append(label)
 
 # Apply the transform to each image and store in a dictionary
