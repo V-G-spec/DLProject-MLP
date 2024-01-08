@@ -35,8 +35,12 @@ Adjust the working directory at the top of each file. Explore `Act_Max_VGG_13.ip
 
 For running `Act_Max_B_12_W_1024.ipynb` on a CPU-only machine, modify the `load()` function in `your_env/lib/python3.*/site-package/torch/serialization.py` to have `map_location: 'cpu'`. Restart the kernel and import the necessary packages. This step is not necessary for GPU machines.
 
-#### VGG
+#### MLP
 Conduct a hyperparameter search using `hyper_search.py`. Set the working directory manually. Visualize results with the `visualization.ipynb` notebook. Images created by `hyper_search.py` are available [here](https://drive.google.com/drive/u/3/folders/1FUrYC6vDdn8mwtCxXlNihVu6dKQtxJk3).
+
+Produce the CIFAR-10 dataset with images transformed into randomly ordered tiles with `Mixed_up_cifar_10.py`. Set the working directory manually. Store generated datasets under `src/cifar10_datasets/`.
+
+Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
 
 ## Fast Gradient Sign Attack (FGSM):
 In the `src/FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
