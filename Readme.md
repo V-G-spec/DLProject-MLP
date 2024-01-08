@@ -40,7 +40,7 @@ Conduct a hyperparameter search using `hyper_search.py`. Set the working directo
 
 Produce the CIFAR-10 dataset with images transformed into randomly ordered tiles with `mixed_up_cifar_10.py`. Set the working directory manually. Store generated datasets under `src/cifar10_datasets/`.
 
-Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
+Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `src/cifar10_datasets/`.
 
 ## Fast Gradient Sign Attack (FGSM):
 In the `src/FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
