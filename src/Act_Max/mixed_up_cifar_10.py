@@ -22,7 +22,7 @@ img_res = 32
 block_size = int(img_res/num_blocks)
 
 # Function to divide an image into 9 patches and randomly permute them
-def divide_and_permute(image):
+def divide_and_permute(image, block_size):
 
     # Check if the image size is 32x32
     if image.shape != (3, 32, 32):
@@ -57,25 +57,30 @@ def divide_and_permute(image):
 test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=None)
 
 
-# Create a file that can used used to load a modified dataset
-with torch.no_grad():
-    
-    modified_images = []
-    labels = []
+num_blocks = [2, 4]
+for num_block in num_blocks: 
+    img_res = 32
+    block_size = int(img_res/num_block)
 
-    for i in range(len(test_dataset)):
-        image, label = test_dataset[i]
-        transform = transforms.Compose([transforms.PILToTensor()])
+    # Create a file that can used used to load a modified dataset
+    with torch.no_grad():
+        
+        modified_images = []
+        labels = []
 
-        image = transform(image) 
+        for i in range(len(test_dataset)):
+            image, label = test_dataset[i]
+            transform = transforms.Compose([transforms.PILToTensor()])
 
-        # Divide and permute the image
-        modified_image = divide_and_permute(image)
-        modified_images.append(Image.fromarray(modified_image.permute(1,2,0).numpy().astype(np.uint8)))
-        labels.append(label)
+            image = transform(image) 
 
-    # Apply the transform to each image and store in a dictionary
-    dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
+            # Divide and permute the image
+            modified_image = divide_and_permute(image, block_size)
+            modified_images.append(Image.fromarray(modified_image.permute(1,2,0).numpy().astype(np.uint8)))
+            labels.append(label)
 
-    # Save the dataset dictionary to a file
-    torch.save(dataset_dict, f'cifar10_permuted_block_size_{block_size}.pth')
+        # Apply the transform to each image and store in a dictionary
+        dataset_dict = [{'image': img, 'label': label} for img, label in zip(modified_images, labels)]
+
+        # Save the dataset dictionary to a file
+        torch.save(dataset_dict, f'cifar10_permuted_block_size_{block_size}.pth')
