@@ -59,7 +59,7 @@ The `src/Dictionary_learning` folder contains scripts to reproduce our project's
 1. Collect last-layer activations for MLP and VGG using `harvest_activations_mlp.ipynb` and `harvest_activations_vgg.ipynb`. Adjust the working directory at the top of each file.
    - Optionally, download activations from the Google Drive at the end of this ReadMe (`acts_B_12-Wi_1024_cifar10_test_postskip.h5` and `acts_VGG13_bn_cifar10_test.h5`, respectively). Perhaps confusingly, the sparse autoencoders (SAEs) are trained on activations elicited by images from the CIFAR10 ***test*** set.
 
-2. Run `train_autoencoder_for_mlp.py` and `train_autoencoder_for_mlp` to train the sparse autoencoders on the collected activations.
+2. Run `train_autoencoder_for_mlp.py` and `train_autoencoder_for_vgg.py` to train the sparse autoencoders on the collected activations.
    - You will have to change the location of the activations file at line 61. If you prefer not to train the models yourself, you can download the model parameters from the Google Drive at the bottom of this ReadMe (`SAE_100_epochs_bs_32_CIFAR10_test_B_12-Wi_1024_postskip.pt` and `SAE_100_epochs_bs_32_CIFAR10_test_vgg_bn13.pt`, respectively).
 
 3. Download the images from the CIFAR10 ***training*** set, together with their targets from the Google Drive at the bottom of this ReadMe (`targs_cifar10_train.h5` and `ims_cifar10_train.h5`)
