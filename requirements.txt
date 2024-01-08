@@ -1,8 +1,8 @@
-python=3.9.18
-matplotlib=3.8.2
-numpy=1.26.2
-torch=2.1.1
-torchvision=0.16.1
-progressbar=2.5
+#python=3.9.18
+matplotlib==3.8.2
+numpy==1.26.2
+torch==2.1.1
+torchvision==0.16.1
+progressbar==2.5
 h5py==3.10.0
 tqdm==4.66.1
