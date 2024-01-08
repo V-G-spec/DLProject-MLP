@@ -1,4 +1,4 @@
-# Interpreting Multilayer Perceptron (MLP)
+# Interpreting Vision Models: A Comparative Study of MLPs and CNNs
 
 ## Overview
 This repository contains code and resources related to our course project for [Deep Learning](https://da.inf.ethz.ch/teaching/2023/DeepLearning/), offered in the Fall Semester 2023 at ETH Zurich. The pre-trained Convolutional Neural Network (CNN) models utilized in this project were obtained from the [PyTorch_CIFAR10 GitHub repository](https://github.com/huyvnphan/PyTorch_CIFAR10). Additionally, the pre-trained Multilayer Perceptron (MLP) model can be found in the [scaling_mlps GitHub repository](https://github.com/gregorbachmann/scaling_mlps).
@@ -54,7 +54,7 @@ Alternatively, download datasets from this [Google Drive Link](https://drive.goo
 Evaluate CNNs on adversarial datasets and the original CIFAR10 dataset using `CIFAR10_CNN.ipynb`. For MLP, use `CIFAR10_MLP.ipynb`.
 
 ## Dictionary Learning
-The `src/Dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (2.4).
+The `src/Dictionary_learning` folder contains scripts to reproduce our project's "Dictionary Learning with Sparse Autoencoders" section (3.3).
 
 1. Collect last-layer activations for MLP and VGG using `harvest_activations_mlp.ipynb` and `harvest_activations_vgg.ipynb`. Adjust the working directory at the top of each file.
    - Optionally, download activations from the Google Drive at the end of this ReadMe (`acts_B_12-Wi_1024_cifar10_test_postskip.h5` and `acts_VGG13_bn_cifar10_test.h5`, respectively). Perhaps confusingly, the sparse autoencoders (SAEs) are trained on activations elicited by images from the CIFAR10 ***test*** set.
