@@ -33,7 +33,7 @@ In the `src/Act_Max` folder, you will find all the files necessary to reproduce 
 ### Activation Maximization:
 Adjust the working directory at the top of each file. Explore `Act_Max_VGG_13.ipynb` and `Act_Max_B_12_W_1024.ipynb` notebooks to experiment with hyperparameters and regularization techniques.
 
-For running `Act_Max_B_12_W_1024.ipynb` on a CPU-only machine, modify the `load()` function in `your_env/lib/python3.*/site-package/torch/serialization.py` to have `map_location: 'cpu'`. Restart the kernel and import the necessary packages. This step is not necessary for GPU machines.
+For running `Act_Max_B_12_W_1024.ipynb` on a CPU-only machine, modify the `load()` function in `your_env/lib/python3.*/site-package/torch/serialization.py` to have `map_location: MAP_LOCATION = 'cpu'`. Restart the kernel and import the necessary packages. This step is not necessary for GPU machines.
 
 #### MLP
 Conduct a hyperparameter search using `hyper_search.py`. Set the working directory manually. Visualize results with the `visualization.ipynb` notebook. Images created by `hyper_search.py` are available [here](https://drive.google.com/drive/u/3/folders/1FUrYC6vDdn8mwtCxXlNihVu6dKQtxJk3).
