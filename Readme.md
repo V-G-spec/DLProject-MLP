@@ -41,7 +41,7 @@ Conduct a hyperparameter search using `hyper_search.py`. Set the working directo
 ## Fast Gradient Sign Attack (FGSM):
 In the `src/FGSM` folder, you will find all the files necessary to reproduce the results of "Adversarial Attacks" corresponding to Section 3.2 of our project.
 
-Adjust the working directory at the top of each file. Use `fgsa_CNN_CIFAR10.py` and `fgsa_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `src/Act_Max_&_FGSA/cifar10_datasets/`.
+Adjust the working directory at the top of each file. Use `FGSM_CNN_CIFAR10.py` and `FGSM_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `src/cifar10_datasets/`.
 
 Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
 
