@@ -1,5 +1,5 @@
 # Set the working directory, change to your specific directory
-project_dir = '/Your_project_folder'
+project_dir = '/Location_of_src_folder'
 
 import sys
 import os
