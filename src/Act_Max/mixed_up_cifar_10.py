@@ -18,8 +18,8 @@ torch.manual_seed(42)
 np.random.seed(42)
 
 num_blocks = 2 # Choose between 2 and 4 
-image_res = 32
-block_size = im_res/num_blocks 
+img_res = 32
+block_size = img_res/num_blocks 
 
 # Function to divide an image into 9 patches and randomly permute them
 def divide_and_permute(image):
