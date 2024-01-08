@@ -38,7 +38,7 @@ For running `Act_Max_B_12_W_1024.ipynb` on a CPU-only machine, modify the `load(
 #### MLP
 Conduct a hyperparameter search using `hyper_search.py`. Set the working directory manually. Visualize results with the `visualization.ipynb` notebook. Images created by `hyper_search.py` are available [here](https://drive.google.com/drive/u/3/folders/1FUrYC6vDdn8mwtCxXlNihVu6dKQtxJk3).
 
-Produce the CIFAR-10 dataset with images transformed into randomly ordered tiles with `Mixed_up_cifar_10.py`. Set the working directory manually. Store generated datasets under `src/cifar10_datasets/`.
+Produce the CIFAR-10 dataset with images transformed into randomly ordered tiles with `mixed_up_cifar_10.py`. Set the working directory manually. Store generated datasets under `src/cifar10_datasets/`.
 
 Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
 
@@ -47,7 +47,7 @@ In the `src/FGSM` folder, you will find all the files necessary to reproduce the
 
 Adjust the working directory at the top of each file. Use `FGSM_CNN_CIFAR10.py` and `FGSM_MLP_CIFAR10.py` to create adversarial datasets for each model. Manually set the model and file name. Store generated datasets under `src/cifar10_datasets/`.
 
-Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `Act_Max_&_FGSA/cifar10_datasets/`.
+Alternatively, download datasets from this [Google Drive Link](https://drive.google.com/drive/u/3/folders/16mf4ZqYUmD8vvn82w1l78DJBiVik75gQ) and save them under `src/cifar10_datasets/`.
 
 Evaluate CNNs on adversarial datasets and the original CIFAR10 dataset using `CIFAR10_CNN.ipynb`. For MLP, use `CIFAR10_MLP.ipynb`.
 
